@@ -79,7 +79,9 @@ stdenv.mkDerivation {
     description = "Clooj, a lightweight IDE for clojure";
     homepage = "https://github.com/clj-commons/clooj";
     license = lib.licenses.epl10;
-    maintainers = with lib.maintainers; [ szanko ];
+    maintainers =
+      let m = lib.maintainers or {};
+      in lib.optionals (m ? szanko) [ m.szanko ];
     mainProgram = "clooj";
     platforms = lib.platforms.all;
   };

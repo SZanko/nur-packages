@@ -42,7 +42,9 @@ rustPlatform.buildRustPackage rec {
     description = "Manager for flatpak repositories";
     homepage = "https://github.com/flatpak/flat-manager";
     license = with lib.licenses; [ asl20 mit ];
-    maintainers = with lib.maintainers; [ szanko ];
+    maintainers =
+      let m = lib.maintainers or {};
+      in lib.optionals (m ? szanko) [ m.szanko ];
     mainProgram = "flat-manager";
   };
 }
