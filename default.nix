@@ -56,6 +56,7 @@ pkgs ? import <nixpkgs> { }
   #go-haystack = pkgs.callPackage ./pkgs/go-haystack { };
 
   hugomods-ascii = pkgs.callPackage ./pkgs/hugomods/ascii { };
+  hugomods-code-block-panel = pkgs.callPackage ./pkgs/hugomods/code-block-panel { };
 
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   stardrop = if stardropPkgs != null then stardropPkgs.default else null;
