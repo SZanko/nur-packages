@@ -4,7 +4,7 @@
 }:
 
 buildGoModule (finalAttrs: {
-  pname = "code-block-panel";
+  pname = "hugomods-code-block-panel";
   version = "0.9.0";
 
   src = fetchFromGitHub {
