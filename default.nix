@@ -61,6 +61,7 @@ pkgs ? import <nixpkgs> { }
   hugomods-snackbar = pkgs.callPackage ./pkgs/hugomods/snackbar { };
   hugomods-fuse-js = pkgs.callPackage ./pkgs/hugomods/fuse-js { };
   hugomods-i18n-js = pkgs.callPackage ./pkgs/hugomods/i18n-js { };
+  hugomods-encoder = pkgs.callPackage ./pkgs/hugomods/encoder { };
  
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   stardrop = if stardropPkgs != null then stardropPkgs.default else null;
