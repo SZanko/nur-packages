@@ -29,7 +29,7 @@ buildGoModule (finalAttrs:  {
 
   meta = {
     description = "Computer: Extended shortcodes for Hugo, such as HTML, helpers, codes and media players";
-    homepage = "https://github.com/hugomods/shortcodes.git";
+    homepage = "https://hugomods.com/docs/shortcodes/";
     changelog = "https://github.com/hugomods/shortcodes/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers =
