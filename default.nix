@@ -55,6 +55,8 @@ pkgs ? import <nixpkgs> { }
   anisette-v3-server = pkgs.callPackage ./pkgs/anisette-v3-server { };
   #go-haystack = pkgs.callPackage ./pkgs/go-haystack { };
 
+  hugomods-ascii = pkgs.callPackage ./pkgs/hugomods/ascii { };
+
   # some-qt5-package = pkgs.libsForQt5.callPackage ./pkgs/some-qt5-package { };
   stardrop = if stardropPkgs != null then stardropPkgs.default else null;
 }
