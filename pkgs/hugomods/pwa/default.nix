@@ -1,7 +1,6 @@
-{
-  lib,
-  buildGoModule,
-  fetchFromGitHub,
+{ lib
+, buildGoModule
+, fetchFromGitHub
 }:
 
 buildGoModule (finalAttrs: {
@@ -19,12 +18,22 @@ buildGoModule (finalAttrs: {
 
   ldflags = [ "-s" ];
 
+  installPhase = ''
+    runHook preInstall
+
+    mkdir -p $out/share/hugomods/pwa
+    cp -r . $out/share/hugomods/pwa
+
+    runHook postInstall
+  '';
+
   meta = {
     description = "Rocket: Hugo programmatic PWA Module, which allows precaching assets, making sites installable and offline available";
-    homepage = "https://github.com/hugomods/pwa";
+    homepage = "https://hugomods.com/docs/pwa/";
     changelog = "https://github.com/hugomods/pwa/blob/${finalAttrs.src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ ];
-    mainProgram = "hugomods-pwa";
+    maintainers =
+      let m = lib.maintainers or {};
+      in lib.optionals (m ? szanko) [ m.szanko ];
   };
 })
