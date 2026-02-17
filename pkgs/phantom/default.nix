@@ -43,9 +43,7 @@ buildGoModule (finalAttrs: {
     description = "An alternative frontend for fandom.com";
     homepage = "https://codeberg.org/phantom-org/phantom";
     license = lib.licenses.gpl3Only;
-    maintainers =
-      let m = lib.maintainers or {};
-      in lib.optionals (m ? szanko) [ m.szanko ];
+    maintainers = lib.maintainers.szanko;
     mainProgram = "phantom";
   };
 })
