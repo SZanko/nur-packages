@@ -72,4 +72,7 @@ pkgs ? import <nixpkgs> { }
   redlib = pkgs.callPackage ./pkgs/redlib { };
 
   phantom = pkgs.callPackage ./pkgs/phantom { };
+
+  overpass-api = pkgs.callPackage ./pkgs/overpass-api { };
+
 }
